@@ -1,6 +1,7 @@
 #include "pilha.h"
 
 /* THIS FILE IS ONLY FOR THE COMMAND LINE EXECUTABLE */
+
 int main(int argc, char **argv) {
     pilha *p = pilha_new();
     pilha_file(p, argv[1]);
