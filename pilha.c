@@ -28,7 +28,6 @@ void _add(pilha *p, i32 value)       { i32 a = pop(p), b = pop(p); push(p, b + a
 void _subtract(pilha *p, i32 value)  { i32 a = pop(p), b = pop(p); push(p, b - a); }
 void _multiply(pilha *p, i32 value)  { i32 a = pop(p), b = pop(p); push(p, b * a); }
 void _divide(pilha *p, i32 value)    { i32 a = pop(p), b = pop(p); push(p, a ? (b / a) : 0); }
-void _modulo(pilha *p, i32 value)    { i32 a = pop(p), b = pop(p); push(p, a ? (b % a) : 0); }
 void _increment(pilha *p, i32 value) { push(p, pop(p) + 1); }
 void _decrement(pilha *p, i32 value) { push(p, pop(p) - 1); }
 void _equal(pilha *p, i32 value)     { i32 a = pop(p), b = pop(p); push(p, b == a); }
@@ -39,7 +38,6 @@ void _or(pilha *p, i32 value)        { i32 a = pop(p), b = pop(p); push(p, b || 
 void _not(pilha *p, i32 value)       { push(p, !pop(p)); }
 void _jump(pilha *p, i32 value)      { p->bytecode_index = p->vvariable[value]; }
 void _branch(pilha *p, i32 value)    { if (pop(p)) p->bytecode_index = p->vvariable[value]; }
-void _halt(pilha *p, i32 value)      { p->bytecode_index = p->bytecode_size; }
 
 void _call(pilha *p, i32 value) {
     p->cstack[p->cstack_top] = p->bytecode_index;
@@ -71,7 +69,6 @@ pilha_command _default[] = {
     {"DIVIDE",    _divide, NULL, NULL},
     {"INCREMENT", _increment, NULL, NULL},
     {"DECREMENT", _decrement, NULL, NULL},
-    {"MODULO",    _modulo, NULL, NULL},
     {"EQUAL",     _equal, NULL, NULL},
     {"MORE",      _more, NULL, NULL},
     {"LESS",      _less, NULL, NULL},
@@ -80,7 +77,6 @@ pilha_command _default[] = {
     {"NOT",       _not, NULL, NULL},
     {"JUMP",      NULL, NULL, _jump},
     {"BRANCH",    NULL, NULL, _branch},
-    {"HALT",      _halt, NULL, NULL},
     {"CALL",      NULL, NULL, _call},
     {"RETURN",    _return, NULL, NULL}
 };
