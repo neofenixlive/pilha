@@ -29,7 +29,7 @@
 1 - Introduction.
 --------------------------------------------------
 &ensp;  Pilha is a lightweight and embeddable scripting language, focused on stack manipulation and supports procedural programming.\
-&ensp;  Pilha is written as a C library, with a minimal set of structs and functions for embedded and fast use.
+&ensp;  Pilha is written as a C library, with a minimal set of functions for embedded and fast use.
   
   
   
