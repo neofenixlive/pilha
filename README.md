@@ -6,20 +6,20 @@
 --------------------------------------------------
 &ensp;  1 - Introduction.
   
-&ensp;  2 - Concepts.
-&emsp;    2.1 - Default type.
-&emsp;    2.2 - Data stack.
-&emsp;    2.3 - Call stack.
-&emsp;    2.4 - Variables.
-&emsp;    2.5 - Targets.
+&ensp;  2 - Concepts.\
+&emsp;    2.1 - Default type.\
+&emsp;    2.2 - Data stack.\
+&emsp;    2.3 - Call stack.\
+&emsp;    2.4 - Variables.\
+&emsp;    2.5 - Targets.\
 &emsp;    2.6 - Error handling.
     
 &ensp;  3 - Syntax.
   
-&ensp;  4 - Default commands.
-&emsp;    4.1 - Stack management.
-&emsp;    4.2 - Arithmetic operations.
-&emsp;    4.3 - Boolean logic.
+&ensp;  4 - Default commands.\
+&emsp;    4.1 - Stack management.\
+&emsp;    4.2 - Arithmetic operations.\
+&emsp;    4.3 - Boolean logic.\
 &emsp;    4.4 - Control flow.
     
 &ensp;  5 - The C API.
@@ -28,32 +28,31 @@
   
 1 - Introduction.
 --------------------------------------------------
-&ensp;  Pilha is a lightweight and embeddable scripting language, focused on stack manipulation and supports procedural programming.
+&ensp;  Pilha is a lightweight and embeddable scripting language, focused on stack manipulation and supports procedural programming.\
 &ensp;  Pilha is written as a C library, with a minimal set of structs and functions for embedded and fast use.
   
   
   
 2 - Concepts.
 --------------------------------------------------
-&ensp;  2.1 - Default type.
+&ensp;  2.1 - Default type.\
 &emsp;    All values are, by default, 32-bit integers.
   
-&ensp;  2.2 - Data stack.
-&emsp;    The data stack is a list of values.
-&emsp;    You can push a value as the last element and pop the last element as a value.
+&ensp;  2.2 - Data stack.\
+&emsp;    The data stack is a list of values. You can push a value as the last element and pop the last element as a value.
   
-&ensp;  2.3 - Call stack.
+&ensp;  2.3 - Call stack.\
 &emsp;    The call stack is a separate stack used by call and return for sub-routine support.
   
-&ensp;  2.4 - Variables.
+&ensp;  2.4 - Variables.\
 &emsp;    Variables are key-to-value pairs in a table. You can store values to keys and load values from keys.
   
-&ensp;  2.5 - Targets.
+&ensp;  2.5 - Targets.\
 &emsp;    Targets are variables identified by a colon used for control flow support.
   
-&ensp;  2.6 - Error handling.
-&emsp;    If you write an invalid command or try to read an unknown file, you'll get an error at compile time.
-&emsp;    If you try to pop an empty stack or try to return without a call, you'll get an error at run time.
+&ensp;  2.6 - Error handling.\
+&emsp;    If you write an invalid command or try to read an unknown file, you'll get an error at compile time.\
+&emsp;    If you try to pop an empty stack or try to return without a call, you'll get an error at run time.\
 &emsp;    Trying to use an undefined variable or dividing by 0 returns 0 instead of getting an error message.
   
   
