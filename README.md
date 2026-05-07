@@ -25,8 +25,6 @@ Reference manual for Pilha.
     
   5 - The C API.
   
-  
-  
 1 - Introduction.
 --------------------------------------------------
   Pilha is a lightweight and embeddable scripting
@@ -34,8 +32,6 @@ Reference manual for Pilha.
   supports procedural programming.
   Pilha is written as a C library, with a minimal
   set of functions for embedded and fast use.
-  
-  
   
 2 - Concepts.
 --------------------------------------------------
@@ -58,7 +54,7 @@ Reference manual for Pilha.
   
   2.5 - Targets.
     Targets are variables identified by a colon
-    used for control flow support.
+    and are used as a position for control flow.
   
   2.6 - Error handling.
     If you write an invalid command or try to
@@ -71,16 +67,12 @@ Reference manual for Pilha.
     dividing by 0 returns 0 instead of getting
     an error message.
   
-  
-  
 3 - Syntax.
 --------------------------------------------------
   Syntax is how the interpreter reads text and
   writes code, it is case-insensitive and
   ignores spaces or anything after semicolons,
   line breaks are used to terminate commands.
-  
-  
   
 4 - Default commands.
 --------------------------------------------------
@@ -98,6 +90,7 @@ Reference manual for Pilha.
     SUBTRACT     ( A B -- A-B )
     MULTIPLY     ( A B -- A*B )
     DIVIDE       ( A B -- A/B )
+    MODULO       ( A B -- A%B )
     INCREMENT    ( A -- A++ )
     DECREMENT    ( A -- A-- )
   
@@ -112,11 +105,10 @@ Reference manual for Pilha.
   4.4 - Control flow.
     JUMP VAR     ( Execution index jumps to VAR )
     BRANCH VAR   ( Execution index jumps to VAR -
-                 - if pop value is true )
+                 - if pop value is not zero )
     CALL VAR     ( Call sub-routine )
     RETURN       ( Return from sub-routine )
-  
-  
+    HALT         ( End execution )
   
 5 - The C API.
 --------------------------------------------------
@@ -125,7 +117,7 @@ Reference manual for Pilha.
     void pilha_delete(pilha* p);
       // Deletes an existent pilha struct.
     void pilha_file(pilha* p, char* file);
-      // Reads file as bytecode to pilha.
+      // Reads file and writes bytecode to pilha.
     void pilha_run(pilha* p);
       // Executes current bytecode from pilha.
     void pilha_push(pilha* p, i32 value);
