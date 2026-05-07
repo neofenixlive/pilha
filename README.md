@@ -130,10 +130,11 @@ Reference manual for Pilha.
 6 - Future ideas
 --------------------------------------------------
   More than one command on each line.
-  String support.  LEFT/MIDDLE/RIGHT/APPEND/FIND
-  General purpose. EXIT/RANDOM/SLEEP/TIME
-                   NUMBER/STRING
-  Syntatic sugar.  IF/THEN/ELSE/END/WHILE/DO
-                   CONTINUE/BREAK
+  Conditional blocks. IF/THEN/ELSE/END
+                      WHILE/DO/CONTINUE/BREAK
+  More operations.    MODULO/ABSOLUTE/TRUNCATE
+                      NOTEQUAL/LESSEQUAL/MOREEQUAL
+  String support.  LEFT/MIDDLE/RIGHT/FIND/APPEND
+  General purpose. EXIT/RANDOM/SLEEP/NUMBER/STRING
   I/O support.     WRITE/READ
 ```
