@@ -24,6 +24,8 @@ Reference manual for Pilha.
     4.4 - Control flow.
     
   5 - The C API.
+
+  6 - Future ideas.
   
 1 - Introduction.
 --------------------------------------------------
@@ -124,4 +126,14 @@ Reference manual for Pilha.
       // Pop value from pilha stack.
     i32 *pilha_variable(pilha* p, char* key);
       // Get pointer to pilha variable.
+
+6 - Future ideas
+--------------------------------------------------
+  More than one command on each line.
+  String support.  LEFT/MIDDLE/RIGHT/APPEND/FIND
+  General purpose. EXIT/RANDOM/SLEEP/TIME
+                   NUMBER/STRING
+  Syntatic sugar.  IF/THEN/ELSE/END/WHILE/DO
+                   CONTINUE/BREAK
+  I/O support.     WRITE/READ
 ```
