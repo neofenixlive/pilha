@@ -90,7 +90,6 @@ Reference manual for Pilha.
     SUBTRACT     ( A B -- A-B )
     MULTIPLY     ( A B -- A*B )
     DIVIDE       ( A B -- A/B )
-    MODULO       ( A B -- A%B )
     INCREMENT    ( A -- A++ )
     DECREMENT    ( A -- A-- )
   
@@ -108,7 +107,6 @@ Reference manual for Pilha.
                  - if pop value is not zero )
     CALL VAR     ( Call sub-routine )
     RETURN       ( Return from sub-routine )
-    HALT         ( End execution )
   
 5 - The C API.
 --------------------------------------------------
