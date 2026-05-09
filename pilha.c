@@ -149,21 +149,6 @@ void pilha_delete(pilha *p) {
     free(p);
 }
 
-void pilha_wipe(pilha *p) {
-    free(p->dstack);
-    free(p->vvariable);
-    for(int i = 0; i < p->variable_size; i++)
-        free(p->kvariable[i]);
-    free(p->kvariable);
-
-    p->dstack_size = 128;
-    p->variable_size = 0;
-    
-    p->dstack = malloc(p->dstack_size * sizeof(i32));
-    p->vvariable = NULL;
-    p->kvariable = NULL;
-}
-
 void pilha_file(pilha *p, char *file) {
     free(p->cstack);
     free(p->bytecode);
@@ -242,6 +227,21 @@ void pilha_run(pilha *p) {
         p->mnemonic[index].function(p, value);
         p->bytecode_index++;
     }
+}
+
+void pilha_wipe(pilha *p) {
+    free(p->dstack);
+    free(p->vvariable);
+    for(int i = 0; i < p->variable_size; i++)
+        free(p->kvariable[i]);
+    free(p->kvariable);
+
+    p->dstack_size = 128;
+    p->variable_size = 0;
+    
+    p->dstack = malloc(p->dstack_size * sizeof(i32));
+    p->vvariable = NULL;
+    p->kvariable = NULL;
 }
 
 void pilha_push(pilha *p, i32 value)     { push(p, value); }
