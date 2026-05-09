@@ -47,9 +47,7 @@ void __decrement(pilha *p, i32 value)     { push(p, pop(p) - 1); }
 void __absolute(pilha *p, i32 value)      { i32 a = pop(p); push(p, (a > 0) ? a : -a); }
 void __maximum(pilha *p, i32 value)       { i32 a = pop(p), b = pop(p); push(p, (b > a) ? b : a); }
 void __minimum(pilha *p, i32 value)       { i32 a = pop(p), b = pop(p); push(p, (b < a) ? b : a); }
-void __random(pilha *p, i32 value)        { push(p, (rand() % pop(p)) + 1); }
 void __equal(pilha *p, i32 value)         { i32 a = pop(p), b = pop(p); push(p, b == a); }
-void __equalnot(pilha *p, i32 value)      { i32 a = pop(p), b = pop(p); push(p, b != a); }
 void __more(pilha *p, i32 value)          { i32 a = pop(p), b = pop(p); push(p, b > a); }
 void __moreequal(pilha *p, i32 value)     { i32 a = pop(p), b = pop(p); push(p, b >= a); }
 void __less(pilha *p, i32 value)          { i32 a = pop(p), b = pop(p); push(p, b < a); }
@@ -98,8 +96,6 @@ pilha_command __default[] = {
     {"ABSOLUTE",  __absolute},
     {"MINIMUM",   __minimum},
     {"MAXIMUM",   __maximum},
-    {"RANDOM",    __random},
-    {"EQUALNOT",  __equalnot},
     {"EQUAL",     __equal},
     {"MOREEQUAL", __moreequal},
     {"MORE",      __more},
@@ -215,7 +211,6 @@ void pilha_file(pilha *p, char *file) {
 }
 
 void pilha_run(pilha *p) {
-    srand(time(NULL));
     p->bytecode_index = 0;
     
     while(p->bytecode_index < p->bytecode_size) {
