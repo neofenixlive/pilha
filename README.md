@@ -80,8 +80,8 @@ Reference manual for Pilha.
 --------------------------------------------------
   4.1 - Stack management.
     Push X      ( -- X )
-    PushAt X    ( -- Variable[X] )
     Pop         ( A -- )
+    PushAt X    ( -- Variable[X] )
     PopAt X     ( A -- ; Variable[X] = A )
     Copy        ( A B -- A B B )
     Swap        ( A B -- B A )
@@ -101,8 +101,8 @@ Reference manual for Pilha.
   4.3 - Boolean logic.
     Equal       ( A B -- A==B )
     More        ( A B -- A>B )
-    MoreEqual   ( A B -- A>=B )
     Less        ( A B -- A<B )
+    MoreEqual   ( A B -- A>=B )
     LessEqual   ( A B -- A<=B )
     And         ( A B -- A&&B )
     Or          ( A B -- A||B )
@@ -110,11 +110,11 @@ Reference manual for Pilha.
   
   4.4 - Control flow.
     Jump X      ( Jump to target )
+    Exit        ( Exit from execution )
     IfTrue      ( Execute next command if -
                 - pop value is not zero )
     IfFalse     ( Execute next command if -
                 - pop value is zero )
-    Exit        ( Exit from execution )
     Call X      ( Call to routine )
     Return      ( Return from routine )
     
