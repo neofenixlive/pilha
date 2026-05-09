@@ -45,7 +45,7 @@ Reference manual for Pilha.
   
   2.3 - Call stack.
     The call stack is a separate stack used by
-    call and return for sub-routine support.
+    call and return for routine support.
   
   2.4 - Variables.
     Variables are key-to-value pairs in a table.
@@ -54,12 +54,12 @@ Reference manual for Pilha.
   
   2.5 - Targets.
     Targets are variables identified by a colon
-    and are used as a position for control flow.
+    at the end and are used for control flow.
   
   2.6 - Error handling.
     If you write an invalid command or try to
     read an unknown file, you'll get an error at
-    compile time.
+    parse time.
     If you try to pop an empty stack or try to
     return without a call, you'll get an error at
     run time.
@@ -79,10 +79,10 @@ Reference manual for Pilha.
 4 - Default commands.
 --------------------------------------------------
   4.1 - Stack management.
-    Push X      ( A B -- A B X )
-    PushAt X    ( A B -- A B Variable[X] )
-    Pop         ( A B -- A )
-    PopAt X     ( A B -- A ; Variable[X] = B )
+    Push X      ( -- X )
+    PushAt X    ( -- Variable[X] )
+    Pop         ( A -- )
+    PopAt X     ( A -- ; Variable[X] = A )
     Copy        ( A B -- A B B )
     Swap        ( A B -- B A )
   
@@ -94,9 +94,9 @@ Reference manual for Pilha.
     Modulo      ( A B -- A%B )
     Increment   ( A -- A++ )
     Decrement   ( A -- A-- )
-    Absolute    ( A -- |A| )
-    Minimum     ( A B -- Min(A,B) )
-    Maximum     ( A B -- Max(A,B) )
+    Absolute    ( A -- Absolute(A) )
+    Minimum     ( A B -- Minimum(A,B) )
+    Maximum     ( A B -- Maximum(A,B) )
     Random      ( A -- Random(1,A) )
   
   4.3 - Boolean logic.
@@ -116,24 +116,24 @@ Reference manual for Pilha.
                 - pop value is not zero )
     IfFalse     ( Execute next command if -
                 - pop value is zero )
-    Exit        ( End execution )
-    Call X      ( Call sub-routine )
-    Return      ( Return from sub-routine )
+    Exit        ( Exit from execution )
+    Call X      ( Call to routine )
+    Return      ( Return from routine )
     
 5 - The C API.
 --------------------------------------------------
     pilha *pilha_new();
       // Returns a new pilha struct.
-    void pilha_delete(pilha* p);
+    void pilha_delete(pilha *p);
       // Deletes an existent pilha struct.
-    void pilha_file(pilha* p, char* file);
+    void pilha_file(pilha *p, char *file);
       // Reads file and writes bytecode to pilha.
-    void pilha_run(pilha* p);
+    void pilha_run(pilha *p);
       // Executes current bytecode from pilha.
-    void pilha_push(pilha* p, i32 value);
+    void pilha_push(pilha *p, i32 value);
       // Push value to pilha stack.
-    i32 pilha_pop(pilha* p);
+    i32 pilha_pop(pilha *p);
       // Pop value from pilha stack.
-    i32 *pilha_variable(pilha* p, char* key);
+    i32 *pilha_variable(pilha *p, char *key);
       // Get pointer to pilha variable.
 ```
