@@ -17,11 +17,12 @@ Reference manual for Pilha.
     
   3 - Syntax.
   
-  4 - Default commands.
+  4 - Default tokens.
     4.1 - Stack management.
     4.2 - Arithmetic operations.
     4.3 - Boolean logic.
     4.4 - Control flow.
+    4.5 - Future tokens.
     
   5 - The C API.
   
@@ -57,7 +58,7 @@ Reference manual for Pilha.
     at the end and are used for control flow.
   
   2.6 - Error handling.
-    If you write an invalid command or try to
+    If you write an invalid token or try to
     read an unknown file, you'll get an error at
     parse time.
     If you try to pop an empty stack or try to
@@ -73,10 +74,10 @@ Reference manual for Pilha.
   writes code to a pilha struct.
   It is case-insensitive and ignores spaces or
   text written after semicolons.
-  Line breaks are used to terminate commands,
+  Line breaks are used to terminate tokens,
   execution ends automatically at end of file.
   
-4 - Default commands.
+4 - Default tokens.
 --------------------------------------------------
   4.1 - Stack management.
     Push X      ( -- X )
@@ -119,7 +120,19 @@ Reference manual for Pilha.
                 - pop value is zero )
     Call X      ( Call to routine )
     Return      ( Return from routine )
-    
+
+  4.5 - Future tokens.
+    IfJump X
+    IfNotJump X
+    IfCall X
+    IfNotCall X
+    Find
+    Join
+    Cut
+    Length
+    String
+    Number
+  
 5 - The C API.
 --------------------------------------------------
     pilha *pilha_new();
