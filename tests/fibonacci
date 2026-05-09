@@ -1,29 +1,30 @@
-pop counter
+PopAt Index
 
-push 0
-pop fib1
+Push 0
+PopAt Fib_1
 
-push 1
-pop fib2
+Push 1
+PopAt Fib_2
 
-loop:
-  push fib1
-  push fib1
-  push fib2
-  add
-  pop fib3
+_Loop:
+    PushAt Fib_1
+    Copy
+    PushAt Fib_2
+    Add
+    PopAt Fib_3
   
-  push fib2
-  pop fib1
+    PushAt Fib_2
+    PopAt Fib_1
   
-  push fib3
-  pop fib2
+    PushAt Fib_3
+    PopAt Fib_2
   
-  push counter
-  decrement
-  pop counter
+    PushAt Index
+    Decrement
+    PopAt Index
   
-  push counter
-  push 0
-  more
-branch loop
+    PushAt Index
+    Push 0
+    MoreEqual
+    IfTrue
+Jump _Loop
