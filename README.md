@@ -95,6 +95,7 @@ Reference manual for Pilha.
     Increment   ( A -- A++ )
     Decrement   ( A -- A-- )
     Absolute    ( A -- Absolute(A) )
+    Negate      ( A -- -A )
     Minimum     ( A B -- Minimum(A,B) )
     Maximum     ( A B -- Maximum(A,B) )
   
@@ -102,6 +103,7 @@ Reference manual for Pilha.
     Equal       ( A B -- A==B )
     More        ( A B -- A>B )
     Less        ( A B -- A<B )
+    NotEqual    ( A B -- A!=B )
     MoreEqual   ( A B -- A>=B )
     LessEqual   ( A B -- A<=B )
     And         ( A B -- A&&B )
