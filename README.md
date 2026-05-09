@@ -103,7 +103,7 @@ Reference manual for Pilha.
   
   4.3 - Boolean logic.
     Equal       ( A B -- A==B )
-    NotEqual    ( A B -- A!=B )
+    EqualNot    ( A B -- A!=B )
     More        ( A B -- A>B )
     MoreEqual   ( A B -- A>=B )
     Less        ( A B -- A<B )
