@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
 #include <stdint.h>
 
 typedef int32_t i32;
