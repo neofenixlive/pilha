@@ -74,7 +74,7 @@ Reference manual for Pilha.
   It is case-insensitive and ignores spaces or
   text written after semicolons.
   Line breaks are used to terminate commands,
-  execution ends automatically at file end.
+  execution ends automatically at end of file.
   
 4 - Default commands.
 --------------------------------------------------
