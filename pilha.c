@@ -149,16 +149,36 @@ void pilha_delete(pilha *p) {
     free(p);
 }
 
+void pilha_wipe(pilha *p) {
+    free(p->dstack);
+    free(p->vvariable);
+    for(int i = 0; i < p->variable_size; i++)
+        free(p->kvariable[i]);
+    free(p->kvariable);
+
+    p->dstack_size = 128;
+    p->variable_size = 0;
+    
+    p->dstack = malloc(p->dstack_size * sizeof(i32));
+    p->vvariable = NULL;
+    p->kvariable = NULL;
+}
+
 void pilha_file(pilha *p, char *file) {
+    free(p->cstack);
+    free(p->bytecode);
+    
+    p->cstack_size = 16;
+    p->bytecode_size = 0;
+    
+    p->cstack = malloc(p->cstack_size * sizeof(i32));
+    p->bytecode = NULL;
+
     FILE* f = fopen(file, "r");
     if(!f) {
         printf("ERROR! Failed to open file.");
         exit(1);
     }
-    
-    free(p->bytecode);
-    p->bytecode = NULL;
-    p->bytecode_size = 0;
     
     char buffer[512];
     while(fgets(buffer, 512, f) != NULL) {
@@ -187,14 +207,16 @@ void pilha_file(pilha *p, char *file) {
             i2 = strlen(p->mnemonic[i1].key);
             if(strncmp(p->mnemonic[i1].key, format, i2) == 0) {
                 p->bytecode = realloc(p->bytecode, sizeof(pilha_instruction) * (p->bytecode_size + 1));
-                p->bytecode[p->bytecode_size].index = i1;
-                p->bytecode[p->bytecode_size].value = 0;
+                u32 *index = &p->bytecode[p->bytecode_size].index;
+                i32 *value = &p->bytecode[p->bytecode_size].value;
+                char *end;
                 
+                *index = i1;
+                *value = 0;
                 if(format[i2] != '\0') {
-                    char *end;
-                    p->bytecode[p->bytecode_size].value = strtol(format + i2, &end, 10);
+                    *value = strtol(format + i2, &end, 10);
                     if(format + i2 == end)
-                        p->bytecode[p->bytecode_size].value = table(p, format + i2);
+                        *value = table(p, format + i2);
                 }
                 
                 p->bytecode_size++;
