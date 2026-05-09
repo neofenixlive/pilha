@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include <stdint.h>
 
 typedef int32_t i32;
@@ -36,12 +37,10 @@ struct pilha {
 struct pilha_command {
     char* key;
     void (*function)(pilha*, i32);
-    void (*function_n)(pilha*, i32);
-    void (*function_v)(pilha*, i32);
 };
 
 struct pilha_instruction {
-    void (*command)(pilha*, i32);
+    u32 index;
     i32 value;
 };
 
