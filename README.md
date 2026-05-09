@@ -23,9 +23,7 @@ Reference manual for Pilha.
     4.3 - Boolean logic.
     4.4 - Control flow.
     
-  5 - Conventions.
-  
-  6 - The C API.
+  5 - The C API.
   
 1 - Introduction.
 --------------------------------------------------
@@ -121,16 +119,8 @@ Reference manual for Pilha.
     Exit        ( End execution )
     Call X      ( Call sub-routine )
     Return      ( Return from sub-routine )
-  
-5 - Conventions.
---------------------------------------------------
-    Source code should be written in PascalCase.
-    Jumps and calls should use indentation.
-    The command line interpreter should allow
-    arguments as initial stack values and
-    display the final stack values.
     
-6 - The C API.
+5 - The C API.
 --------------------------------------------------
     pilha *pilha_new();
       // Returns a new pilha struct.
