@@ -97,11 +97,9 @@ Reference manual for Pilha.
     Absolute    ( A -- Absolute(A) )
     Minimum     ( A B -- Minimum(A,B) )
     Maximum     ( A B -- Maximum(A,B) )
-    Random      ( A -- Random(1,A) )
   
   4.3 - Boolean logic.
     Equal       ( A B -- A==B )
-    EqualNot    ( A B -- A!=B )
     More        ( A B -- A>B )
     MoreEqual   ( A B -- A>=B )
     Less        ( A B -- A<B )
