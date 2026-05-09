@@ -20,7 +20,7 @@ void __minimum(pilha *p, i32 value)       { i32 a = pilha_pop(p), b = pilha_pop(
 void __equal(pilha *p, i32 value)         { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b == a); }
 void __more(pilha *p, i32 value)          { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b > a); }
 void __less(pilha *p, i32 value)          { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b < a); }
-void __notequal(pilha *p, i32 value)      { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b != a); }
+void __equalnot(pilha *p, i32 value)      { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b != a); }
 void __moreequal(pilha *p, i32 value)     { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b >= a); }
 void __lessequal(pilha *p, i32 value)     { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b <= a); }
 void __and(pilha *p, i32 value)           { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b && a); }
