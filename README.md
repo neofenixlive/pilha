@@ -23,7 +23,9 @@ Reference manual for Pilha.
     4.3 - Boolean logic.
     4.4 - Control flow.
     
-  5 - The C API.
+  5 - Conventions.
+  
+  6 - The C API.
   
 1 - Introduction.
 --------------------------------------------------
@@ -70,45 +72,65 @@ Reference manual for Pilha.
 3 - Syntax.
 --------------------------------------------------
   Syntax is how the interpreter reads text and
-  writes code, it is case-insensitive and
-  ignores spaces or anything after semicolons,
-  line breaks are used to terminate commands.
+  writes code to a pilha struct.
+  It is case-insensitive and ignores spaces or
+  text written after semicolons.
+  Line breaks are used to terminate commands,
+  execution ends automatically at file end.
   
 4 - Default commands.
 --------------------------------------------------
   4.1 - Stack management.
-    PUSH NUM     ( A B -- A B NUM )
-    POP          ( A B -- A )
-    PUSH VAR     ( A B -- A B VAR )
-    POP VAR      ( A B -- A -
-                 - VAR is defined as B )
-    COPY         ( A B -- A B B )
-    SWAP         ( A B -- B A )
+    Push X      ( A B -- A B X )
+    PushAt X    ( A B -- A B Variable[X] )
+    Pop         ( A B -- A )
+    PopAt X     ( A B -- A ; Variable[X] = B )
+    Copy        ( A B -- A B B )
+    Swap        ( A B -- B A )
   
   4.2 - Arithmetic operations.
-    ADD          ( A B -- A+B )
-    SUBTRACT     ( A B -- A-B )
-    MULTIPLY     ( A B -- A*B )
-    DIVIDE       ( A B -- A/B )
-    INCREMENT    ( A -- A++ )
-    DECREMENT    ( A -- A-- )
+    Add         ( A B -- A+B )
+    Subtract    ( A B -- A-B )
+    Multiply    ( A B -- A*B )
+    Divide      ( A B -- A/B )
+    Modulo      ( A B -- A%B )
+    Increment   ( A -- A++ )
+    Decrement   ( A -- A-- )
+    Absolute    ( A -- |A| )
+    Minimum     ( A B -- Min(A,B) )
+    Maximum     ( A B -- Max(A,B) )
+    Random      ( A -- Random(0,A) )
   
   4.3 - Boolean logic.
-    EQUAL        ( A B -- A==B )
-    MORE         ( A B -- A>B )
-    LESS         ( A B -- A<B )
-    AND          ( A B -- A&&B )
-    OR           ( A B -- A||B )
-    NOT          ( A -- !A )
+    Equal       ( A B -- A==B )
+    NotEqual    ( A B -- A!=B )
+    More        ( A B -- A>B )
+    MoreEqual   ( A B -- A>=B )
+    Less        ( A B -- A<B )
+    LessEqual   ( A B -- A<=B )
+    And         ( A B -- A&&B )
+    Or          ( A B -- A||B )
+    Not         ( A -- !A )
   
   4.4 - Control flow.
-    JUMP VAR     ( Execution index jumps to VAR )
-    BRANCH VAR   ( Execution index jumps to VAR -
-                 - if pop value is not zero )
-    CALL VAR     ( Call sub-routine )
-    RETURN       ( Return from sub-routine )
+    Jump X      ( Jump to target )
+    IfTrue      ( Execute next command if -
+                - pop value is not zero )
+    IfFalse     ( Execute next command if -
+                - pop value is zero )
+    Exit        ( End execution )
+    Call X      ( Call sub-routine )
+    Return      ( Return from sub-routine )
   
-5 - The C API.
+5 - Conventions.
+--------------------------------------------------
+    Source code should be written in PascalCase.
+    Jumps and calls should use indentation.
+    The command line interpreter should allow
+    arguments as initial stack values and
+    display the final stack values.
+    
+6 - The C API.
 --------------------------------------------------
     pilha *pilha_new();
       // Returns a new pilha struct.
@@ -124,3 +146,4 @@ Reference manual for Pilha.
       // Pop value from pilha stack.
     i32 *pilha_variable(pilha* p, char* key);
       // Get pointer to pilha variable.
+```
