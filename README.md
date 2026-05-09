@@ -97,7 +97,7 @@ Reference manual for Pilha.
     Absolute    ( A -- |A| )
     Minimum     ( A B -- Min(A,B) )
     Maximum     ( A B -- Max(A,B) )
-    Random      ( A -- Random(0,A) )
+    Random      ( A -- Random(1,A) )
   
   4.3 - Boolean logic.
     Equal       ( A B -- A==B )
