@@ -45,6 +45,7 @@ struct pilha_instruction {
 
 pilha *pilha_new();
 void pilha_delete(pilha*);
+void pilha_wipe(pilha*);
 void pilha_file(pilha*, char*);
 void pilha_run(pilha*);
 void pilha_push(pilha*, i32);
