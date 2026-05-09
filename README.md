@@ -128,6 +128,8 @@ Reference manual for Pilha.
       // Reads file and writes bytecode to pilha.
     void pilha_run(pilha *p);
       // Executes current bytecode from pilha.
+    void pilha_wipe(pilha *p),
+      // Wipe stack and variable data from pilha.
     void pilha_push(pilha *p, i32 value);
       // Push value to pilha stack.
     i32 pilha_pop(pilha *p);
