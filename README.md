@@ -95,10 +95,8 @@ Reference manual for Pilha.
     Modulo      ( A B -- A%B )
     Increment   ( A -- A++ )
     Decrement   ( A -- A-- )
-    Absolute    ( A -- +A )
+    Absolute    ( A -- |A| )
     Negate      ( A -- -A )
-    Minimum     ( A B -- Minimum(A,B) )
-    Maximum     ( A B -- Maximum(A,B) )
   
   4.3 - Boolean logic.
     Equal       ( A B -- A==B )
