@@ -15,8 +15,6 @@ void __increment(pilha *p, i32 value)     { pilha_push(p, pilha_pop(p) + 1); }
 void __decrement(pilha *p, i32 value)     { pilha_push(p, pilha_pop(p) - 1); }
 void __absolute(pilha *p, i32 value)      { i32 a = pilha_pop(p); pilha_push(p, (a > 0) ? a : -a); }
 void __negate(pilha *p, i32 value)        { i32 a = pilha_pop(p); pilha_push(p, -a); }
-void __maximum(pilha *p, i32 value)       { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, (b > a) ? b : a); }
-void __minimum(pilha *p, i32 value)       { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, (b < a) ? b : a); }
 void __equal(pilha *p, i32 value)         { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b == a); }
 void __equalnot(pilha *p, i32 value)      { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b != a); }
 void __more(pilha *p, i32 value)          { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b > a); }
@@ -66,8 +64,6 @@ pilha_token pilha_mnemonic[] = {
     {"DECREMENT", __decrement},
     {"ABSOLUTE",  __absolute},
     {"NEGATE",    __negate},
-    {"MINIMUM",   __minimum},
-    {"MAXIMUM",   __maximum},
     {"EQUALNOT",  __equalnot},
     {"EQUAL",     __equal},
     {"MOREEQUAL", __moreequal},
