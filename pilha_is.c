@@ -4,8 +4,8 @@ void __push(pilha *p, i32 value)          { pilha_push(p, value); }
 void __pushat(pilha *p, i32 value)        { pilha_push(p, p->vvariable[value]); }
 void __pop(pilha *p, i32 value)           { pilha_pop(p); }
 void __popat(pilha *p, i32 value)         { p->vvariable[value] = pilha_pop(p); }
-void __copy(pilha *p, i32 value)          { i32 a = pilha_pop(p); pilha_push(p, a); pilha_push(p, a); }
-void __swap(pilha *p, i32 value)          { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, a); pilha_push(p, b); }
+void __duplicate(pilha *p, i32 value)     { i32 a = pilha_pop(p); pilha_push(p, a); pilha_push(p, a); }
+void __change(pilha *p, i32 value)        { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, a); pilha_push(p, b); }
 void __add(pilha *p, i32 value)           { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b + a); }
 void __subtract(pilha *p, i32 value)      { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b - a); }
 void __multiply(pilha *p, i32 value)      { i32 a = pilha_pop(p), b = pilha_pop(p); pilha_push(p, b * a); }
@@ -55,8 +55,8 @@ pilha_token pilha_mnemonic[] = {
     {"PUSH",      __push},
     {"POPAT",     __popat},
     {"POP",       __pop},
-    {"COPY",      __copy},
-    {"SWAP",      __swap},
+    {"DUPLICATE", __duplicate},
+    {"CHANGE",    __change},
     {"ADD",       __add},
     {"SUBTRACT",  __subtract},
     {"MULTIPLY",  __multiply},
