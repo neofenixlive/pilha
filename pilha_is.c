@@ -74,10 +74,10 @@ pilha_token pilha_mnemonic[] = {
     {"OR",        __or},
     {"NOT",       __not},
     {"JUMP",      __jump},
+    {"CALL",      __call},
+    {"RETURN",    __return},
     {"EXIT",      __exit},
     {"IFTHEN",    __ifthen},
     {"IFNOTTHEN", __ifnotthen},
-    {"CALL",      __call},
-    {"RETURN",    __return},
     {NULL,        NULL}
 };
