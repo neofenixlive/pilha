@@ -14,16 +14,15 @@ Reference manual for Pilha.
     2.4 - Variables.
     2.5 - Targets.
     2.6 - Error handling.
-    
+  
   3 - Syntax.
   
   4 - Default tokens.
     4.1 - Stack management.
-    4.2 - Arithmetic operations.
-    4.3 - Boolean logic.
+    4.2 - Arithmetic.
+    4.3 - Logic.
     4.4 - Control flow.
-    4.5 - Future tokens.
-    
+  
   5 - The C API.
   
 1 - Introduction.
@@ -87,7 +86,7 @@ Reference manual for Pilha.
     Duplicate   ( A B -- A B B )
     Change      ( A B -- B A )
   
-  4.2 - Arithmetic operations.
+  4.2 - Arithmetic.
     Add         ( A B -- A+B )
     Subtract    ( A B -- A-B )
     Multiply    ( A B -- A*B )
@@ -98,7 +97,7 @@ Reference manual for Pilha.
     Absolute    ( A -- |A| )
     Negate      ( A -- -A )
   
-  4.3 - Boolean logic.
+  4.3 - Logic.
     Equal       ( A B -- A==B )
     EqualNot    ( A B -- A!=B )
     More        ( A B -- A>B )
@@ -111,21 +110,13 @@ Reference manual for Pilha.
   
   4.4 - Control flow.
     Jump X      ( Jump to target )
+    Call X      ( Call to routine )
+    Return      ( Return from routine )
     Exit        ( Exit from execution )
     IfThen      ( Execute next token if -
                 - pop value is not zero )
     IfNotThen   ( Execute next token if -
                 - pop value is zero )
-    Call X      ( Call to routine )
-    Return      ( Return from routine )
-
-  4.5 - Future tokens.
-    Find
-    Join
-    Cut
-    Length
-    String
-    Number
   
 5 - The C API.
 --------------------------------------------------
