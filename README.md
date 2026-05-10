@@ -81,8 +81,8 @@ Reference manual for Pilha.
 --------------------------------------------------
   4.1 - Stack management.
     Push X      ( -- X )
-    Pop         ( A -- )
     PushAt X    ( -- Variable[X] )
+    Pop         ( A -- )
     PopAt X     ( A -- ; Variable[X] = A )
     Copy        ( A B -- A B B )
     Swap        ( A B -- B A )
@@ -95,7 +95,7 @@ Reference manual for Pilha.
     Modulo      ( A B -- A%B )
     Increment   ( A -- A++ )
     Decrement   ( A -- A-- )
-    Absolute    ( A -- Absolute(A) )
+    Absolute    ( A -- +A )
     Negate      ( A -- -A )
     Minimum     ( A B -- Minimum(A,B) )
     Maximum     ( A B -- Maximum(A,B) )
@@ -114,9 +114,9 @@ Reference manual for Pilha.
   4.4 - Control flow.
     Jump X      ( Jump to target )
     Exit        ( Exit from execution )
-    IfTrue      ( Execute next command if -
+    IfThen      ( Execute next command if -
                 - pop value is not zero )
-    IfFalse     ( Execute next command if -
+    IfNotThen   ( Execute next command if -
                 - pop value is zero )
     Call X      ( Call to routine )
     Return      ( Return from routine )
