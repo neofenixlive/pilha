@@ -112,9 +112,9 @@ Reference manual for Pilha.
   4.4 - Control flow.
     Jump X      ( Jump to target )
     Exit        ( Exit from execution )
-    IfThen      ( Execute next command if -
+    IfThen      ( Execute next token if -
                 - pop value is not zero )
-    IfNotThen   ( Execute next command if -
+    IfNotThen   ( Execute next token if -
                 - pop value is zero )
     Call X      ( Call to routine )
     Return      ( Return from routine )
