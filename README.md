@@ -84,8 +84,8 @@ Reference manual for Pilha.
     PushAt X    ( -- Variable[X] )
     Pop         ( A -- )
     PopAt X     ( A -- ; Variable[X] = A )
-    Copy        ( A B -- A B B )
-    Swap        ( A B -- B A )
+    Duplicate   ( A B -- A B B )
+    Change      ( A B -- B A )
   
   4.2 - Arithmetic operations.
     Add         ( A B -- A+B )
