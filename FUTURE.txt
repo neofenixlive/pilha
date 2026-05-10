@@ -1,0 +1,5 @@
+read integer as * 1000 and allow fixed-point decimals
+revise MULTIPLY DIVIDE MODULO tokens for decimal
+
+use bit-tagging for number/string types
+FIND JOIN CUT LENGTH NUMBER STRING tokens for string
