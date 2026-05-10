@@ -26,5 +26,5 @@ _Loop:
     PushAt Index
     Push 0
     MoreEqual
-    IfTrue
+    IfThen
 Jump _Loop
