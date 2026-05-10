@@ -102,10 +102,10 @@ Reference manual for Pilha.
   
   4.3 - Boolean logic.
     Equal       ( A B -- A==B )
+    EqualNot    ( A B -- A!=B )
     More        ( A B -- A>B )
-    Less        ( A B -- A<B )
-    NotEqual    ( A B -- A!=B )
     MoreEqual   ( A B -- A>=B )
+    Less        ( A B -- A<B )
     LessEqual   ( A B -- A<=B )
     And         ( A B -- A&&B )
     Or          ( A B -- A||B )
@@ -122,10 +122,6 @@ Reference manual for Pilha.
     Return      ( Return from routine )
 
   4.5 - Future tokens.
-    IfJump X
-    IfNotJump X
-    IfCall X
-    IfNotCall X
     Find
     Join
     Cut
