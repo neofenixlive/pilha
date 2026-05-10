@@ -8,7 +8,7 @@ PopAt Fib_2
 
 _Loop:
     PushAt Fib_1
-    Copy
+    Duplicate
     PushAt Fib_2
     Add
     PopAt Fib_3
